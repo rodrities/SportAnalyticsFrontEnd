@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Rutina } from 'src/app/shared/Models/Rutina';
 import { Service } from 'src/app/shared/service/service';
+import { GeneracionRutinaRequest } from 'src/app/shared/Models/GeneracionRutinaRequest';
 
 @Component({
   selector: 'app-home',
@@ -13,14 +14,16 @@ export class HomeComponent implements OnInit {
   rutinas: Rutina[] = []
   showSpinner = true
   userId: any  = localStorage.getItem('userId')
+  private request: GeneracionRutinaRequest = new GeneracionRutinaRequest()
+  private eRutina: Rutina = new Rutina
   
-
   constructor(
      private router: Router,
     private service: Service){ }
     value: number = 10;
-
+      
   ngOnInit(): void {
+    this.request.inputs = this.eRutina
     this.service.getRutines(this.userId ).subscribe((response: any) => {
 
       console.log(response)
@@ -42,7 +45,7 @@ export class HomeComponent implements OnInit {
 
   generarRutina(): void {
     this.showSpinner = true
-    this.service.generateRutina(this.userId).subscribe(
+    this.service.generateRutina(this.userId, this.request).subscribe(
       (response: any) => {
         console.log(response);
         
@@ -58,3 +61,4 @@ export class HomeComponent implements OnInit {
   }
 
 }
+

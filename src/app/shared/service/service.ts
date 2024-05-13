@@ -4,6 +4,7 @@ import { SignupRequest } from "../Models/SignupRequest";
 import { Injectable } from "@angular/core";
 import { LoginResponse } from "../Models/LoginResponse";
 import { Rutina } from "../Models/Rutina";
+import { GeneracionRutinaRequest } from "../Models/GeneracionRutinaRequest";
 
 @Injectable({
     providedIn: 'root'
@@ -30,8 +31,8 @@ export class Service{
         return this.http.get<Array<Rutina>>(`https://api-backend-3nyg.onrender.com/api/rutinas/${id}`, this.generateHeaders());
     }
 
-    public generateRutina = (id: string): Observable<Rutina> => {
-        const body = {};
+    public generateRutina = (id: string,  body: GeneracionRutinaRequest): Observable<Rutina> => {
+        
         return this.http.post<Rutina>(`https://api-backend-3nyg.onrender.com/api/rutinas/${id}`, body , this.generateHeaders());
     }
 

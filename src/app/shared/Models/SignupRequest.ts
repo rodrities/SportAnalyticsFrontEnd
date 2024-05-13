@@ -5,4 +5,5 @@ export class SignupRequest {
     edad!: string
     altura!: string
     peso!: string
+    objetivo!: string
 }
