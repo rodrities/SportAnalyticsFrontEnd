@@ -15,34 +15,34 @@ export class Service{
 
 
     public signup = (body: SignupRequest): Observable<String> => {
-        return this.http.post<String>('http://localhost:8080/api/auth/signup', body, this.generateHeaders());
+        return this.http.post<String>('https://api-backend-3nyg.onrender.com/api/auth/signup', body, this.generateHeaders());
     }
 
     public login = (body: SignupRequest): Observable<LoginResponse> => {
-        return this.http.post<LoginResponse>('http://localhost:8080/api/auth/login', body, this.generateHeaders());
+        return this.http.post<LoginResponse>('https://api-backend-3nyg.onrender.com/api/auth/login', body, this.generateHeaders());
     }
 
     public getRutine = (): Observable<any> => {
-        return this.http.get<any>('http://localhost:8080/api/rutinas', this.generateHeaders());
+        return this.http.get<any>('https://api-backend-3nyg.onrender.com/api/rutinas', this.generateHeaders());
     }
 
     public getRutines = (id: Number): Observable<Array<Rutina>> => {
-        return this.http.get<Array<Rutina>>(`http://localhost:8080/api/rutinas/${id}`, this.generateHeaders());
+        return this.http.get<Array<Rutina>>(`https://api-backend-3nyg.onrender.com/api/rutinas/${id}`, this.generateHeaders());
     }
 
     public generateRutina = (id: string): Observable<Rutina> => {
         const body = {};
-        return this.http.post<Rutina>(`http://localhost:8080/api/rutinas/${id}`, body , this.generateHeaders());
+        return this.http.post<Rutina>(`https://api-backend-3nyg.onrender.com/api/rutinas/${id}`, body , this.generateHeaders());
     }
 
     public getEjercicios = (id: Number, ejercicio: String): Observable<Rutina> => {
         const body = {};
-        return this.http.get<Rutina>(`http://localhost:8080/api/rutinas/atleta/${id}/ejercicios/${ejercicio}` , this.generateHeaders());
+        return this.http.get<Rutina>(`https://api-backend-3nyg.onrender.com/api/rutinas/atleta/${id}/ejercicios/${ejercicio}` , this.generateHeaders());
     }
 
     public getAllEjercicios = (id: Number): Observable<String> => {
         const body = {};
-        return this.http.get<String>(`http://localhost:8080/api/rutinas/ejercicios/${id}` , this.generateHeaders());
+        return this.http.get<String>(`https://api-backend-3nyg.onrender.com/api/rutinas/ejercicios/${id}` , this.generateHeaders());
     }
 
      //GENERADOR DE HEADERS
