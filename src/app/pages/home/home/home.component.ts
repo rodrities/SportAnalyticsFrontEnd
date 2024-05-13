@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
       (response: any) => {
         console.log(response);
         
-        this.router.navigate(['/rutina'])
+        this.router.navigate(['/home'])
         this.showSpinner = false
       },
       (error: any) => {
