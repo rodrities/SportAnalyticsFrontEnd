@@ -79,3 +79,27 @@
   .toggle {
     width: 100%;
   }
+
+  .competencia-text {
+    color: #00367F;
+    font-family: "Bebas Neue", sans-serif;
+  
+  }
+
+  ::ng-deep .mat-button-toggle-checked {
+    background-color: #00367F !important;
+    color: white !important; /* Cambiar a tu tono de azul deseado */
+  }
+  
+  .custom-toggle-group .mat-button-toggle-checked {
+    background-color: green !important;
+  }
+
+  .select-container {
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 

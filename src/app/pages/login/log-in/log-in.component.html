@@ -1,6 +1,5 @@
 <div class="login-container">
   <div class="card">
-    <p-messages [(value)]="messages" [enableService]="false" [closable]="false"></p-messages>
 </div>
     <div class="login-img-container">
       <img alt="" src="assets/login.jpeg" height="100%">
@@ -48,6 +47,8 @@
             </mat-card-content>
           </form>
         </mat-card>
+        <p-messages [(value)]="messages" [enableService]="false" />
+
     </div>
     
   </div>

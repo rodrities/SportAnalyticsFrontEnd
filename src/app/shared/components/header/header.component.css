@@ -38,12 +38,25 @@ h2 {
     margin-top: -1%;
 }
 .logout-container {
-    width: 12%;
-    height:90%;
+    width: 24%;
+    height:100%;
    margin-left: 70%;
+   
 }
 
+.logout-container a {
+    display: flex;
+    
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+}
 
+.logout-container a h4{
+    text-decoration: none;
+}
 
 .user {
     display: flex;

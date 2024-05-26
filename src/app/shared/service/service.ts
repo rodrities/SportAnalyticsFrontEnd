@@ -15,8 +15,8 @@ export class Service{
     }
 
 
-    public signup = (body: SignupRequest): Observable<String> => {
-        return this.http.post<String>('https://api-backend-3nyg.onrender.com/api/auth/signup', body, this.generateHeaders());
+    public signup = (body: SignupRequest): Observable<string> => {
+        return this.http.post('https://api-backend-3nyg.onrender.com/api/auth/signup', body, { ...this.generateHeaders2(), responseType: 'text' });
     }
 
     public login = (body: SignupRequest): Observable<LoginResponse> => {
@@ -56,5 +56,14 @@ export class Service{
                 //'Access-Control-Allow-Origin': 'https://deaorwhzisbsc.cloudfront.net'
             })
         }
+    }
+
+    private generateHeaders2 = () => {
+        return {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+            }),
+            responseType: 'text' // Indicar que esperamos una respuesta de tipo texto
+        };
     }
 }

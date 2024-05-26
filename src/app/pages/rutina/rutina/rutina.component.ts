@@ -12,7 +12,7 @@ export class RutinaComponent implements OnInit{
   
 
   rutina: Rutina = new Rutina
-  
+  competencia!: string
 
   
 
@@ -22,7 +22,7 @@ export class RutinaComponent implements OnInit{
    private route: ActivatedRoute){ }
 
   ngOnInit(): void {
-
+    this.competencia = localStorage.getItem('competencia')!
     // Obtener el parámetro rutina de la URL
     const rutinaEncoded = this.route.snapshot.queryParamMap.get('rutina');
 

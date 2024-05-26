@@ -43,6 +43,8 @@ import { DialogModule } from 'primeng/dialog';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { MessagesModule } from 'primeng/messages';
 import { EjerciciosComponent } from './pages/ejercicios/ejercicios/ejercicios.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 
 @NgModule({
   declarations: [
@@ -82,7 +84,8 @@ import { EjerciciosComponent } from './pages/ejercicios/ejercicios/ejercicios.co
     ProgressSpinnerModule,
     DialogModule,
     ConfirmPopupModule,
-    MessagesModule
+    MessagesModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

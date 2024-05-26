@@ -39,12 +39,20 @@ export class LogInComponent implements OnInit {
     console.log(this.request)
     this.service.login(this.request).subscribe((response: any) => {
       console.log(response)
+    
+
+      
       this.loginResponse = response
       localStorage.setItem('userId', this.loginResponse.id.toString())
       localStorage.setItem('user', this.loginResponse.nombre)
-      this.messages = [{ severity: 'success', summary: 'Success', detail: 'Message Content' }]
+      localStorage.setItem('competencia', this.loginResponse.competencia)
+     // this.messages = [{ severity: 'success', summary: 'Success', detail: 'Message Content' }]
       this.router.navigate(['/home'])
       
+    },
+    (error) => {
+        console.error('Error al llamar al servicio:', error);
+        this.addMessages(error.error.message != null ? error.error.message : error.error.response)
     }
 
 
@@ -55,4 +63,11 @@ export class LogInComponent implements OnInit {
     )
     
   }
+
+  addMessages(error: string) {
+    this.messages = [
+        { severity: 'error', summary: error },
+        
+    ];
+}
 }
