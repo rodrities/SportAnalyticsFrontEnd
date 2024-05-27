@@ -13,7 +13,7 @@ export class RutinaComponent implements OnInit{
 
   rutina: Rutina = new Rutina
   competencia!: string
-
+  fC!: number
   
 
   constructor(
@@ -31,7 +31,8 @@ export class RutinaComponent implements OnInit{
 
     // Utilizar el objeto rutina según sea necesario
     console.log(this.rutina);
-
+    this.fC = this.rutina.rutina_ejercicios[3].series[0].fre_cardiaca
+    console.log(this.fC)
    //this.getRutina()
   }
 
