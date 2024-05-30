@@ -44,6 +44,8 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { MessagesModule } from 'primeng/messages';
 import { EjerciciosComponent } from './pages/ejercicios/ejercicios/ejercicios.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { PerfilComponent } from './pages/perfil/perfil/perfil.component';
+import { ChangePasswordComponent } from './pages/changePassword/change-password/change-password.component';
 
 
 @NgModule({
@@ -56,7 +58,9 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     RutinaComponent,
     EjercicioComponent,
     EjercicioHistorialComponent,
-    EjerciciosComponent
+    EjerciciosComponent,
+    PerfilComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

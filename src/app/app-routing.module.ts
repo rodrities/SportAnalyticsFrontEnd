@@ -7,8 +7,8 @@ import { RutinaComponent } from './pages/rutina/rutina/rutina.component';
 import { EjercicioComponent } from './pages/ejercicio/ejercicio/ejercicio.component';
 import { EjercicioHistorialComponent } from './pages/ejercicio/ejercicio-historial/ejercicio-historial.component';
 import { EjerciciosComponent } from './pages/ejercicios/ejercicios/ejercicios.component';
-
-
+import { PerfilComponent } from './pages/perfil/perfil/perfil.component';
+import { ChangePasswordComponent } from './pages/changePassword/change-password/change-password.component';
 
 const routes: Routes = [
   {
@@ -42,13 +42,19 @@ const routes: Routes = [
   {
     path: 'ejercicios',
     component: EjerciciosComponent,
-  }
+  },
+  {
+    path: 'perfil',
+    component: PerfilComponent,
+  },
+  {
+    path: 'changePassword',
+    component: ChangePasswordComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-
-
+export class AppRoutingModule {}
