@@ -40,6 +40,7 @@
                 <td>28/04/2024</td>
                 <td class="peor" *ngIf="serie.tiempo > media">{{ serie.tiempo }} ▲</td>
                 <td class="mejor" *ngIf="serie.tiempo < media" >{{ serie.tiempo }} ▼</td>
+                <td class="mejor" *ngIf="serie.tiempo == media" >{{ serie.tiempo }} </td>
                 <td>{{ serie.fre_cardiaca }}</td>
                 <td> {{serie.velocidad }}</td>
             </tr>

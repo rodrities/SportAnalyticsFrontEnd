@@ -5,6 +5,7 @@ import { Message } from 'primeng/api';
 import { LoginResponse } from 'src/app/shared/Models/LoginResponse';
 import { SignupRequest } from 'src/app/shared/Models/SignupRequest';
 import { Service } from 'src/app/shared/service/service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-change-password',
@@ -42,23 +43,34 @@ export class ChangePasswordComponent implements OnInit {
         console.log(response);
 
         this.loginResponse = response;
-        this.router.navigate(['/login']);
-      },
-      (error) => {
-        console.error('Error al llamar al servicio:', error);
-        this.addMessages(
-          error.error.message != null
-            ? error.error.message
-            : error.error.response
-        );
-      }
 
-      //this.service.getRutine().subscribe((response: any) => {
-      //   console.log(response)
-      //  }
-      //
+        Swal.fire({
+          icon: 'success',
+          title: 'Cambio de contrasena',
+          html: 'Se restablecio correctamente',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.router.navigate(['/login']);
+          }
+        });
+      },
+      (error: any) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error al crear cuenta',
+          html: 'Problema con el servidor',
+        }).then((result) => {
+          if (result.isConfirmed) {
+          }
+        });
+      }
     );
   }
+
+  //this.service.getRutine().subscribe((response: any) => {
+  //   console.log(response)
+  //  }
+  //
 
   addMessages(error: string) {
     this.messages = [{ severity: 'error', summary: error }];

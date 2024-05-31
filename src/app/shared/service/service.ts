@@ -15,7 +15,7 @@ export class Service {
 
   public signup = (body: SignupRequest): Observable<string> => {
     return this.http.post(
-      'https://api-backend-3nyg.onrender.com/api/auth/signup',
+      'https://api-backend-3nyg.onrender.comm/api/auth/signup',
       body,
       { ...this.generateHeaders2(), responseType: 'text' }
     );
@@ -75,7 +75,7 @@ export class Service {
 
   public changePassword = (body: SignupRequest): Observable<LoginResponse> => {
     return this.http.post<LoginResponse>(
-      `https://api-backend-3nyg.onrender.com/api//perfiles/changePassword`,
+      `http://localhost:8080/api/perfiles/changePassword`,
       body,
       this.generateHeaders()
     );
