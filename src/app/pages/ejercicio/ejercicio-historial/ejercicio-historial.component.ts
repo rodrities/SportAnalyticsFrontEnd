@@ -47,14 +47,19 @@ export class EjercicioHistorialComponent implements OnInit {
             timeData.push(this.ejercicios2[i].series[j].tiempo);
             labelsData.push('28/04/2024');
             this.media = this.media + this.ejercicios2[i].series[j].tiempo;
-            if (i == 0) {
+            if (i == 0 && j == 0) {
               this.peorTiempo = this.ejercicios2[i].series[j].tiempo;
               this.mejorTiempo = this.ejercicios2[i].series[j].tiempo;
+              console.log(this.mejorTiempo);
             } else {
               if (this.ejercicios2[i].series[j].tiempo > this.peorTiempo)
                 this.peorTiempo = this.ejercicios2[i].series[j].tiempo;
-              if (this.ejercicios2[i].series[j].tiempo < this.mejorTiempo)
+              if (this.ejercicios2[i].series[j].tiempo < this.mejorTiempo) {
+                console.log(this.ejercicios2[i].series[j].tiempo);
+                console.log(this.mejorTiempo);
                 this.mejorTiempo = this.ejercicios2[i].series[j].tiempo;
+                console.log(this.mejorTiempo);
+              }
             }
             this.serieList.push(this.ejercicios2[i].series[j]);
           }
